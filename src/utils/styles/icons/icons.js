@@ -14,6 +14,8 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
 
+
+
 export const Icons = {
     MaterialCommunityIcons,
     MaterialIcons,
@@ -27,7 +29,8 @@ export const Icons = {
     Octicons,
     Foundation,
     EvilIcons,
-    Fontisto
+    Fontisto,
+    
 
 }
 

@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity, FlatList, ScrollView } from 'react-native';
-import { Card } from 'react-native-paper';
+import { Button, Card } from 'react-native-paper';
 import { black } from 'react-native-paper/lib/typescript/styles/themes/v2/colors';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 import EvilIcons from "react-native-vector-icons/EvilIcons";
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 
 const HomeContainer = () => {
+  
 
     const data = [
         {
@@ -85,29 +87,29 @@ const HomeContainer = () => {
 
         },
         {
-            id:5,
-            name:'Liver',
-            'image':require('../../Images/SwiperImages/liver.jpg')
+            id: 5,
+            name: 'Liver',
+            'image': require('../../Images/SwiperImages/liver.jpg')
         },
         {
-            id:6,
-            name:' skin',
-            'image':require('../../Images/SwiperImages/skin.jpg')
+            id: 6,
+            name: ' skin',
+            'image': require('../../Images/SwiperImages/skin.jpg')
         },
         {
-            id:7,
-            name:'Mutton Boti',
-            'image':require('../../Images/SwiperImages/boti.jpg')
+            id: 7,
+            name: 'Mutton Boti',
+            'image': require('../../Images/SwiperImages/boti.jpg')
         },
         {
-            id:8,
-            name:'Boneless ',
-            'image':require('../../Images/SwiperImages/boneless.jpg')
+            id: 8,
+            name: 'Boneless ',
+            'image': require('../../Images/SwiperImages/boneless.jpg')
         },
         {
-            id:9,
-            name:'Mutton',
-            'image':require('../../Images/SwiperImages/raan.jpg')
+            id: 9,
+            name: 'Mutton',
+            'image': require('../../Images/SwiperImages/raan.jpg')
         }
     ]
     return (
@@ -156,8 +158,8 @@ const HomeContainer = () => {
                         )}
                     />
                 </View>
-                <View style={{ padding:5}}>
-                    
+                <View style={{ padding: 5 }}>
+
                     <FlatList
                         data={menu}
                         horizontal={true}
@@ -169,6 +171,7 @@ const HomeContainer = () => {
                                     justifyContent: 'space-between',
                                     alignItems: 'center',
                                     marginTop: '30%',
+                                    padding: 10
                                 }}>
                                     <Image
                                         source={item.image}
@@ -184,11 +187,23 @@ const HomeContainer = () => {
                                         fontWeight: 'bold',
                                         color: 'black'
                                     }}>{item.grm}</Text>
-                                    <Text style={{
-                                        alignSelf: 'center',
-                                        fontWeight: 'bold',
-                                        color: 'black'
-                                    }}>Price:{item.price}</Text>
+                                    <View style={{
+                                        flexDirection: 'row',
+                                        //  justifyContent:'space-between',
+                                        alignSelf: "center"
+                                    }}>
+                                        <Text style={{
+                                            alignSelf: 'center',
+                                            fontWeight: 'bold',
+                                            color: 'black',
+                                            marginRight: 10
+                                        }}>Price:{item.price}</Text>
+                                        <AntDesign
+                                            name={"pluscircle"}
+                                            size={20}
+                                            // onPress={}
+                                            />
+                                    </View>
 
                                 </Card>
                             )
@@ -205,7 +220,7 @@ const HomeContainer = () => {
                     <Text style={{
                         color: 'black',
                         fontWeight: 'bold',
-                        fontSize:20
+                        fontSize: 20
                     }}>Categories</Text>
 
                     <FlatList
@@ -215,7 +230,7 @@ const HomeContainer = () => {
                         showsHorizontalScrollIndicator={false}
                         renderItem={({ item }) => {
                             return (
-                                <View style={{ padding:10}}>
+                                <View style={{ padding: 10 }}>
                                     <Image
                                         source={item.image}
                                         style={{ height: 80, width: 80, borderRadius: 80 / 2 }}

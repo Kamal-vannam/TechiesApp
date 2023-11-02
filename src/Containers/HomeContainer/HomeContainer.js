@@ -6,9 +6,37 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 import EvilIcons from "react-native-vector-icons/EvilIcons";
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import { menu } from '../../assets/data';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBookmark, removeBookmark } from '../../redux/actions';
 
 
 const HomeContainer = () => {
+
+    const { books, bookmarks } = useSelector(state => state.booksReducer);
+
+    console.log("maheshchecking")
+
+    const dispatch = useDispatch();
+
+    const addToBookmarkList = book => dispatch(addBookmark(book));
+    const removeFromBookmarkList = book => dispatch(removeBookmark(book));
+    const handleAddBookmark = book => {
+        addToBookmarkList(book);
+    };
+
+
+    const handleRemoveBookmark = book => {
+        removeFromBookmarkList(book);
+    };
+
+    const ifExists = book => {
+        if (bookmarks.filter(item => item.id === book.id).length > 0) {
+            return true;
+        }
+
+        return false;
+    };
   
 
     const data = [
@@ -30,36 +58,7 @@ const HomeContainer = () => {
         }
     ]
 
-    const menu = [
-        {
-            id: 1,
-            name: 'Chicken',
-            'image': require('../../Images/SwiperImages/chi.jpg'),
-            grm: '500 g',
-            price: 150
-        },
-        {
-            id: 2,
-            name: 'Eggs',
-            'image': require('../../Images/SwiperImages/egg.jpg'),
-            grm: "12 Eggs",
-            price: 100
-        },
-        {
-            id: 3,
-            name: 'Fish',
-            'image': require('../../Images/SwiperImages/fish.jpg'),
-            grm: '500 g',
-            price: 150
-        },
-        {
-            id: 4,
-            name: 'Mutton',
-            'image': require('../../Images/SwiperImages/mut.jpg'),
-            grm: '500 g',
-            price: 300
-        }
-    ]
+    
 
     const Categories = [
         {
@@ -199,9 +198,11 @@ const HomeContainer = () => {
                                             marginRight: 10
                                         }}>Price:{item.price}</Text>
                                         <AntDesign
-                                            name={"pluscircle"}
+                                            name={  ifExists(item) ? 'minus' :  "pluscircle"}
                                             size={20}
-                                            // onPress={}
+                                            onPress={() =>
+                                                ifExists(item) ? handleRemoveBookmark(item) : handleAddBookmark(item)
+                                            }
                                             />
                                     </View>
 

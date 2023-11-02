@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "TechiesApp.app"
-               BlueprintName = "TechiesApp"
-               ReferencedContainer = "container:TechiesApp.xcodeproj">
+               BuildableName = "Meatwala.app"
+               BlueprintName = "Meatwala"
+               ReferencedContainer = "container:Meatwala.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "TechiesAppTests.xctest"
-               BlueprintName = "TechiesAppTests"
-               ReferencedContainer = "container:TechiesApp.xcodeproj">
+               BuildableName = "MeatwalaTests.xctest"
+               BlueprintName = "MeatwalaTests"
+               ReferencedContainer = "container:Meatwala.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "TechiesApp.app"
-            BlueprintName = "TechiesApp"
-            ReferencedContainer = "container:TechiesApp.xcodeproj">
+            BuildableName = "Meatwala.app"
+            BlueprintName = "Meatwala"
+            ReferencedContainer = "container:Meatwala.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "TechiesApp.app"
-            BlueprintName = "TechiesApp"
-            ReferencedContainer = "container:TechiesApp.xcodeproj">
+            BuildableName = "Meatwala.app"
+            BlueprintName = "Meatwala"
+            ReferencedContainer = "container:Meatwala.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -15,6 +15,8 @@ const HomeContainer = () => {
 
     const { books, bookmarks } = useSelector(state => state.booksReducer);
 
+    console.log("maheshchecking")
+
     const dispatch = useDispatch();
 
     const addToBookmarkList = book => dispatch(addBookmark(book));

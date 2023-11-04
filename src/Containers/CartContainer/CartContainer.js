@@ -1,9 +1,10 @@
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, FlatList, SafeAreaView, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList, SafeAreaView, StyleSheet, Button } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux';
 import { removeBookmark } from '../../redux/actions';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Card } from 'react-native-paper';
+import RazorpayCheckout from 'react-native-razorpay';
 
 const CartContainer = () => {
 
@@ -20,6 +21,35 @@ const CartContainer = () => {
     };
 
 
+const Payment=()=>{
+    let options = {
+        description: 'Credits towards consultation',
+        image: 'https://i.imgur.com/3g7nmJC.jpg',
+        currency: 'INR',
+        key: 'rzp_test_E6ZPerREiK1Gfn',
+        amount: '800'*100,
+        name: 'Acme Corp',
+        order_id: '',//Replace this with an order_id created using Orders API.
+        prefill: {
+          email: 'gaurav.kumar@example.com',
+          contact: '9191919191',
+          name: 'Gaurav Kumar'
+        },
+        theme: {color: '#53a20e'}
+      }
+      RazorpayCheckout.open(options).then((data) => {
+        // handle success
+        alert(`Success: ${data.razorpay_payment_id}`);
+      }).catch((error) => {
+        // handle failure
+
+        alert(`Error: ${error.code} | ${error.description}`);
+      });
+
+}
+
+    
+
 
     const renderItem = ({ item }) => {
         return (
@@ -32,7 +62,7 @@ const CartContainer = () => {
                         style={{ width: 100, height: 150, borderRadius: 10 }}
                     /> */}
                     {/* Book Metadata */}
-                    <View style={{ flex: 1, marginLeft: 12 }}>
+                    <View style={{ flex: 1, marginLeft: 13 }}>
                         {/* Book Title */}
                         <Card style={{
                             marginLeft: 20,
@@ -114,6 +144,7 @@ const CartContainer = () => {
                     />
                 )}
             </View>
+           <Button title='pay' onPress={()=>{Payment()}} />
         </View>
 
 

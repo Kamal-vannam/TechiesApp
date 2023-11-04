@@ -1,7 +1,26 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useEffect } from 'react'
+import { View, Text, Alert } from 'react-native'
+import api from '../../api/index'
 
-const CatergoriesContainer= () => {
+const CatergoriesContainer = () => {
+
+
+    useEffect(() => {
+        getDocotordetails()
+    }, [])
+
+    const getDocotordetails = async () => {
+
+        const payload = {
+            TENANT_ID: 72
+
+        }
+
+
+        const res = await api.user.Getdetails(payload)
+        console.log("res", res)
+    }
+
     return (
         <View>
             <Text>CatergoriesContainer</Text>

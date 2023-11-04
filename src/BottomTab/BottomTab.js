@@ -1,4 +1,3 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React, { useEffect, useRef } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Icon, { Icons } from '../utils/styles/icons/icons';
@@ -19,7 +18,6 @@ const TabArr = [
   { route: 'Categories', label: 'Catergories', type: Icons.MaterialIcons, icon: 'category', component: CatergoriesPage, tabBarColor: Colors.green },
   { route: 'Cart', label: 'Cart', type: Icons.AntDesign, icon: 'shoppingcart', component: CartPage, tabBarColor: Colors.red },
   { route: 'Account', label: 'Account', type: Icons.MaterialCommunityIcons, icon: 'account', component: AccountPage, tabBarColor: Colors.yellow },
-  // { route: 'Account', label: 'Account', type: Icons.FontAwesome, icon: 'user-circle-o', component: AccountPage, tabBarColor: Colors.purple },
 ];
 
 export default function Tab4() {

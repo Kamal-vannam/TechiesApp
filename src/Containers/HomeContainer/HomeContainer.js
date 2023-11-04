@@ -9,7 +9,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign'
 import { menu } from '../../assets/data';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBookmark, removeBookmark } from '../../redux/actions';
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const HomeContainer = () => {
 
@@ -37,7 +37,7 @@ const HomeContainer = () => {
 
         return false;
     };
-  
+
 
     const data = [
         {
@@ -58,7 +58,7 @@ const HomeContainer = () => {
         }
     ]
 
-    
+
 
     const Categories = [
         {
@@ -166,46 +166,72 @@ const HomeContainer = () => {
                         renderItem={({ item }) => {
                             return (
                                 <Card style={{
-                                    marginLeft: 20,
+                                    margin: 20,
                                     justifyContent: 'space-between',
                                     alignItems: 'center',
                                     marginTop: '30%',
-                                    padding: 10
+                                    // padding: 10
                                 }}>
+
                                     <Image
                                         source={item.image}
-                                        style={{ height: 100, width: 100, margin: 10 }}
+                                        style={{ height: 120, width: 200, borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
                                     />
                                     <Text style={{
-                                        alignSelf: 'center',
                                         fontWeight: 'bold',
-                                        color: 'black'
+                                        color: 'black',
+                                        fontSize: 18,
+                                        marginHorizontal: 10
                                     }}>{item.name}</Text>
                                     <Text style={{
-                                        alignSelf: 'center',
                                         fontWeight: 'bold',
-                                        color: 'black'
+                                        color: 'black',
+                                        marginHorizontal: 10,
+                                        marginTop: 10
                                     }}>{item.grm}</Text>
                                     <View style={{
-                                        flexDirection: 'row',
-                                        //  justifyContent:'space-between',
-                                        alignSelf: "center"
+                                        // flexDirection: 'row',
+                                        // alignSelf: "center"
                                     }}>
                                         <Text style={{
-                                            alignSelf: 'center',
                                             fontWeight: 'bold',
                                             color: 'black',
-                                            marginRight: 10
+                                            marginHorizontal: 10,
+                                            marginTop: 10
                                         }}>Price:{item.price}</Text>
-                                        <AntDesign
-                                            name={  ifExists(item) ? 'minus' :  "pluscircle"}
+                                        {/* <AntDesign
+                                            name={ifExists(item) ? 'minus' : "pluscircle"}
                                             size={20}
                                             onPress={() =>
                                                 ifExists(item) ? handleRemoveBookmark(item) : handleAddBookmark(item)
                                             }
-                                            />
+                                        /> */}
                                     </View>
-
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            ifExists(item) ? handleRemoveBookmark(item) : handleAddBookmark(item)
+                                        }
+                                        }
+                                        style={{
+                                            position: 'absolute',
+                                            bottom: 0,
+                                            right: 10,
+                                            top: -6,
+                                            marginHorizontal: -17,
+                                            height: 30,
+                                            width: "15%",
+                                            backgroundColor: "#210524",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                            borderRadius: 10
+                                        }}
+                                    >
+                                        <MaterialCommunityIcons
+                                            name={'plus'}
+                                            color={"white"}
+                                            size={25}
+                                        />
+                                    </TouchableOpacity>
                                 </Card>
                             )
                         }}
@@ -226,7 +252,6 @@ const HomeContainer = () => {
 
                     <FlatList
                         data={Categories}
-                        // horizontal={true}
                         numColumns={3}
                         showsHorizontalScrollIndicator={false}
                         renderItem={({ item }) => {
@@ -247,10 +272,6 @@ const HomeContainer = () => {
                     />
 
                 </Card>
-                {/* </ScrollView> */}
-
-
-
             </SafeAreaView>
         </ScrollView>
     )

@@ -1,30 +1,38 @@
 export const menu = [
     {
         id: 1,
-        name: 'Chicken',
-        'image': require('../Images/SwiperImages/chi.jpg'),
+        name: 'Keema',
+        'image': require('../Images/SwiperImages/keema.jpg'),
         grm: '500 g',
-        price: 150
+        price: 150,
+        discount : 120,
+        percentage: ''
     },
     {
         id: 2,
-        name: 'Eggs',
-        'image': require('../Images/SwiperImages/egg.jpg'),
+        name: 'Liver',
+        'image': require('../Images/SwiperImages/liver.jpg'),
         grm: "12 Eggs",
-        price: 100
+        price: 150,
+        discount : 120,
+        percentage: ''
     },
     {
         id: 3,
-        name: 'Fish',
-        'image': require('../Images/SwiperImages/fish.jpg'),
+        name: 'Boneless Mutton',
+        'image': require('../Images/goat-boneless.jpeg'),
         grm: '500 g',
-        price: 150
+        price: 150,
+        discount : 120,
+        percentage: ''
     },
     {
         id: 4,
         name: 'Mutton',
         'image': require('../Images/SwiperImages/mut.jpg'),
         grm: '500 g',
-        price: 300
+        price: 150,
+        discount : 120,
+        percentage: ''
     }
 ]

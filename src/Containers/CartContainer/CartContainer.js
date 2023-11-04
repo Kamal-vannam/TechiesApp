@@ -22,23 +22,18 @@ const CartContainer = () => {
 
 
     const renderItem = ({ item }) => {
+
+        console.log("itemitem",item);
         return (
            
             <View style={styles.container}>
-                    {/* Book Cover */}
-                    {/* <Image
-                        source={item.image}
-                        resizeMode='cover'
-                        style={{ width: 100, height: 150, borderRadius: 10 }}
-                    /> */}
-                    {/* Book Metadata */}
                     <View style={{ flex: 1, marginLeft: 12 }}>
                         {/* Book Title */}
                         <Card style={{
                             marginLeft: 20,
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            marginTop: '30%',
+                            // marginTop: '30%',
                             padding: 10
                         }}>
                             <Image
@@ -64,8 +59,7 @@ const CartContainer = () => {
                            
 
                         </Card>
-                        {/* Buttons */}
-                        <View style={{ marginTop: 14 }}>
+                        {/* <View style={{ marginTop: 14 }}>
                             <TouchableOpacity
                                 onPress={() => handleRemoveBookmark(item)}
                                 activeOpacity={0.7}
@@ -86,10 +80,9 @@ const CartContainer = () => {
                                     name='bookmark-remove'
                                 />
                             </TouchableOpacity>
-                        </View>
+                        </View> */}
                     </View>
                 </View>
-           
 
         )
     }
@@ -99,11 +92,11 @@ const CartContainer = () => {
 
         <View>
 
-            <Text style={{ fontSize: 22 }}>Bookmarks</Text>
+            {/* <Text style={{ fontSize: 22 }}>Bookmarks</Text> */}
             <View style={{  marginTop: 8 }}>
                 {bookmarks.length === 0 ? (
                     <Text style={{ color: '#64676D', fontSize: 18 }}>
-                        Add a book to bookmark list.
+                        Please Add Items To Cart
                     </Text>
                 ) : (
                     <FlatList

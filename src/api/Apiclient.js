@@ -4,14 +4,16 @@ import PubSub from 'pubsub-js';
 import DeviceHelper from '../DeviceHelper/DeviceHelper';
 import { TOKEN_EXPIRE } from '../utils/utils';
 import { getApiKey, getJwtToken } from '../AsyncstorageHelper/AsyncstorageHelper';
+import Config from "react-native-config";
+
 //export const API_BASE_URL = 'http://undppri.dhanushinfotech.com'; //Dev
 //export const API_BASE_URL = 'https://undppriqa.dhanushinfotech.com'; //QA
 
 //export const API_BASE_URL = 'https://tribaltms.dhanushinfotech.com'; //Pro
 // export const API_BASE_URL = 'https://adiprashikshan.tribal.gov.in'; //NIC
 // export const API_BASE_URL = 'https://apps.apbjpdata.org'; //NIC
-// export const API_BASE_URL = Config.API_URL;
-export const API_BASE_URL="https://vmedprodev.dhanushinfotech.com";
+//export const API_BASE_URL = Config.API_URL;
+export const API_BASE_URL=Config.API_URL;
 
 export const API_STATUS = {
   NO_INTERNET: 'NO_INTERNET',
